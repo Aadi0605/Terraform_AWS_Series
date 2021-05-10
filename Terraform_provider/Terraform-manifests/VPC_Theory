@@ -1,0 +1,25 @@
+
+Topic -- #VPC
+
+A Virtual private cloud is a virtual network that closly resembles a traditional Networking that you operate in your own data centre , 
+with the benefits of using the scalable Infrastructure of AWS
+
+OR
+
+VPC is a virtual network or data center inside AWS for one client .
+
+--> It is logically isolated from other network in the aw cloud 
+--> Max 5 VPC can be created and 200subnets in 1 VPC 
+--> We can allocate Max 5 Elastic IP
+	# An Elastic IP address is a reserved public IP address that you can assign to any EC2 instance in a particular region,
+	until you choose to release it. 
+--> A VPC is confined to an AWS region and does not extend between Regions .
+--> Once we created VPC , DHCP ,NACP , 
+
+--> VPC is region specfic  i.e they cant be in 2 region or in any availbility zone 
+--> Subnet are av zone specfic .i.e they cant be any region .
+
+--> Once the VPC is created , you cannot change its CIDR Block Range .
+--> If you need a different CIDR size , create a new VPC .
+--> The different subnet within a VPC cant be overlap .
+--> You can expand your VPC CIDR by adding New / Extra IP address Ranges (Except Gov cloud and AWS china)
