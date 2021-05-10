@@ -18,3 +18,4 @@
     -- https://www.terraform.io/docs/language/dependency-lock.html
   
 resource taken from - https://www.terraform.io/docs/language/providers/index.html  
+VPC_Provider_link - https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
