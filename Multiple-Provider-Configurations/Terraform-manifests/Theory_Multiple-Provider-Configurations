@@ -1,0 +1,27 @@
+#Introduction
+	Understand and Implement Multiple Provider Configurations
+	
+#How to define multiple provider configuration of same Provider?
+	Understand about default provider
+	Understand and define multiple provider configurations of same provider
+
+#####The Resource provider Meta-Argument#####
+The provider meta-argument specifies which provider configuration to use for a resource, overriding Terraform's default behavior of selecting one 
+based on the resource type name. Its value should be an unquoted <PROVIDER>.<ALIAS> reference.
+
+you can optionally create multiple configurations for a single provider (usually to manage resources in different regions of multi-region services).
+ Each provider can have one default configuration, and any number of alternate configurations that include an extra name segment (or "alias").
+
+Example:
+# default configuration
+provider "google" {
+  region = "us-central1"
+}
+
+# alternate configuration, whose alias is "europe"
+provider "google" {
+  alias  = "europe"
+  region = "europe-west1"
+}
+
+resource URL - https://www.terraform.io/docs/language/meta-arguments/resource-provider.html
