@@ -1,0 +1,20 @@
+#About Terraform Provider
+
+#providers are the heart of terraform 
+
+#What Providers Do
+  Each provider adds a set of resource types and/or data sources that Terraform can manage.
+  Every resource type is implemented by a provider; without providers, Terraform can't manage any kind of infrastructure.
+  
+#Where Providers Come From
+  The Terraform Registry is the main directory of publicly available Terraform providers, and hosts providers for most major infrastructure platforms.
+
+#How to Use Providers
+  Provider Requirements documents how to declare providers so Terraform can install them.
+    -- https://www.terraform.io/docs/language/providers/requirements.html
+  Provider Configuration documents how to configure settings for providers.  
+    -- https://www.terraform.io/docs/language/providers/configuration.html
+  Dependency Lock File documents an additional HCL file that can be included with a configuration, which tells Terraform to always use a specific set of provider versions.
+    -- https://www.terraform.io/docs/language/dependency-lock.html
+  
+resource taken from - https://www.terraform.io/docs/language/providers/index.html  
