@@ -1,0 +1,15 @@
+###Resource meta-Arguments-depends_on
+
+1) Use the depends_on meta-Arguments to handle hidden resource or module dependencies that Terraform can't automatically infer.
+
+2) Explicitly specifying a dependency is only necessary when a resource or module relies on some other resource's behaviour but doesn't access 
+any of that resource's data in its arguments .
+
+3)This argument is available in module blocks and in all resource blocks , regardless of resource type . 
+
+4) The depends_on meta-Arguments , if present , must be a listb of references to other resources or child modules in the same calling module .
+
+5)Arbitrary expressions are not allowed in the depends_on argument value , because its value must be known before terraform knows resource relationships 
+and thus before it can safely evaluate expressions . 
+
+6)The depends_on arguments should be used only as a last resort . Add comments for future reference about why we added this . 
