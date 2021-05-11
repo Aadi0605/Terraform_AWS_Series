@@ -1,0 +1,54 @@
+Dependency Lock File 
+
+New Feature added from 0.14 version and later -->
+
+Terraform configuration refers to two different kinds of external dependency that come from outside of its own codebase .
+
+Terraform  ----> Providers
+		|
+		| ------> Modules
+		
+#Version Constraints within the configuration itself determine which verison of dependencies are potentially compatible .
+
+#Dependency Lock File: After selecting a specfic version of each dependency using VERSION CONSTRAINTS Terraform remembers 
+the decision it made in a dependency lock file so that it can (by default) make the same decision again in future .
+
+Location of lock file : Current working directory 
+
+#####Note :
+			Lock file currently tracks only provider dependencies .For modules continue to use exact version constraints 
+			to ensure that Terraform will always select the module version .    
+
+Checksum verification - Terraform will also verify that each package it installs matches at least one of the checksums it previously recorded in the lock file .
+If any , returing an err if none of the checksum match .
+++Pls refer attach pic
+
+If Terraform did not find a lock file --> it would download the latest version of the providers that fulfill the version constraints you defined in the 
+required_providers block inside Terraform settings block .
+
+If we have lock file , the lock file causes terraform to always install the same provider version , ensuring that runs across your team or remote sessions 
+will be consistent 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			
