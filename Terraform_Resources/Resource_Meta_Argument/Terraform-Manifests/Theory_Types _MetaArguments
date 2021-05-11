@@ -1,0 +1,16 @@
+
+Types of resource meta Argument use in terraform .
+
+depends_on = To handle hidden resource or module dependenices that terraform can't automatically infer.
+
+count = For creating multiple resources instances according to a count .
+
+for_each = To create multiple instances accoding to a map , or set of strings .
+
+Provider = For selecting a non default provider configuration .
+
+lifecycle = Standard Resource behaviour can be altered using special nested lifecycle block within a resource block body .
+
+Provisioners and Connections = For taking extra actions after resource creation .
+
+   
