@@ -17,14 +17,22 @@ so you can modify the configuration of each instance. This object has one attrib
     instance.
 
 example
-resource "aws_instance" "server" {
-  count = 4 # create four similar EC2 instances
 
-  ami           = "ami-a1b2c3d4"
+Step : Create 5 EC2 Instances using Terraform
+
+--> In general, 1 EC2 Instance Resource in Terraform equals to 1 EC2 Instance in Real AWS Cloud
+--> 5 EC2 Instance Resources = 5 EC2 Instances in AWS Cloud
+--> With Meta-Argument count this is going to become super simple.
+
+Lets see how.
+
+# Create EC2 Instance
+resource "aws_instance" "web" {
+  ami = "ami-047a51fa27710816e" # Amazon Linux
   instance_type = "t2.micro"
-
+  count = 5
   tags = {
-    Name = "Server ${count.index}"
+    "Name" = "web"
   }
 }
 
