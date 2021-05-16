@@ -83,6 +83,7 @@ Theory : Meta_Argument : Lifecycle
 	rm -rf .terraform*
 	rm -rf terraform.tfstate*
 	
+--> Lifecycle - ignore_changes
 
-
+	It will remove the changes which we manually added using AWS Management console .
 	
