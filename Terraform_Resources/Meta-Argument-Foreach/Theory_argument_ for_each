@@ -1,0 +1,31 @@
+Theory on Meta Argument "For each"
+
+--> If a resource or module block includes a for_each argumentwhos value is map or set of strings,
+	Terraform will create one instance for each member of that mapp or set .
+	
+--> Each instance has a distinct infrastructure object associated with it , and each is seperately 
+		created , updated or destroyed when the configuration is applied .
+		
+--> In blocks where for_each is set , an additional each object is available in expressions , so we
+	need to modify the configuration of each instances .
+
+	each.key 	- The map key (or set member) corresponding to his instance .
+	each.value  - The map value corresponding to this instance (if a set was provided, this is the same 
+				  as each.key .
+				
+--> For set of strings, each.key = each.value
+	for_each 	= toset("jack","james")
+	each.key 	= jack
+	each .value = james
+	
+--> For_each , we use each.key & each.value 
+	for_each - {
+			dev = "my-dapp-bucket"
+			}
+	each.key   = dev
+	each.value = my-dapp-bucket
+	
+--> Module support for_each was added in Terraform 0.13 and previous versions can only use it with resources .
+
+-->A given resources or module block cannot use both count and for_each .	 	
+	
