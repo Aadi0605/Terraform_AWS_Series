@@ -1,0 +1,7 @@
+
+--> validation - A block to define validation rules, usually in addition to type constraints.
+
+Custom Validation Rules
+
+--> can specify arbitrary custom validation rules for a particular variable using a validation block nested within 
+	the corresponding variable block:
