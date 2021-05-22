@@ -17,3 +17,7 @@
 		description = "Environment Name"
 		type = string
 	}
+
+
+#Here as we are not providing variable value for App name and env name , After appling command Terraform plan , Terraform would ask us in console .
+#For putting the values 
