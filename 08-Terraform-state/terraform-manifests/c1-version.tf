@@ -7,6 +7,14 @@ terraform {
       version = "~> 3.0"
     }
   }
+
+
+# Terraform Backend Block
+  backend "s3" {
+    bucket = "terraform-stacksimplify"
+    key    = "dev/terraform.tfstate"
+    region = "us-east-1"    
+  }
 }
 
 # Provider Block
