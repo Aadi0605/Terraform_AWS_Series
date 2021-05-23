@@ -13,7 +13,7 @@ resource "aws_instance" "my_ec2_instance01" {
     EOF
 	
 	vpc_security_group_ids = [aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id]
-	tags {
+	tags = {
 		"Name" = "amz-linux-vm"
 	
 	}
