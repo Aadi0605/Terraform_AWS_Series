@@ -24,4 +24,42 @@
 			Desktop
 			
 
---> Remote state file : 			
+--> Remote state file : 
+
+--> Each terraform configuration can specify a backend , which defines where and how operations are performed , where state 
+	snapshots are stored ,etc .
+	
+--> Where Backends are used :
+		A) Backends configuration is only used by Terraform CLI.
+		B) Terraform cloud and Terradorm Enterprise always use their own state storage when performing Terraform runs , So they 
+		   ignore any backend block in the configuration . 
+		   
+--> For Terraform cloud users also it is always recommended to use backend block in terraform configuration for commands like terraform 
+	taint which can be executed only using Terraform CLI .
+	
+--> There are two things backends will be used for :
+	1. where state is stored .
+	2. where operations are performed .
+	
+--> Store state : 						  |   state Locking 					   |	Operations
+  1. Terraform uses persistent state data | state Locking is to prevent conflicts  |1) "Operations" refers to performing APi requests against     |
+	 to keep track of the resources it    | and inconsistencies when the operations|	infrastructure servies in order to create , read , update,|
+	 manages .							  | are being performed  				   |    or destroy resources .									  |
+  2. Everyone working with a given 		  |										   |2) Not every terraform subcommand performs API operations     |														  |
+	collection of instructure resources   |										   |   many of them operate on state data . 					  |								  |
+	must be able to access to same state  |										   |3) 	Only two backends actually perform operation : loccal and |													  |
+	data(shared state storage) .		  |										   |    remote 													  |
+										  |										   |4) The remote backend can perform API operations remotely ,   |
+										  |										   |	using Terraform cloud or Terraform Enterprise .			  |   
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -11,7 +11,7 @@ terraform {
 
 # Terraform Backend Block
   backend "s3" {
-    bucket = "terraform-stacksimplify"
+    bucket = "terraform-aws-series"
     key    = "dev/terraform.tfstate"
     region = "us-east-1"    
   }
