@@ -41,18 +41,48 @@
 	1. where state is stored .
 	2. where operations are performed .
 	
---> Store state : 						  |   state Locking 					   |	Operations
-  1. Terraform uses persistent state data | state Locking is to prevent conflicts  |1) "Operations" refers to performing APi requests against     |
-	 to keep track of the resources it    | and inconsistencies when the operations|	infrastructure servies in order to create , read , update,|
-	 manages .							  | are being performed  				   |    or destroy resources .									  |
-  2. Everyone working with a given 		  |										   |2) Not every terraform subcommand performs API operations     |														  |
-	collection of instructure resources   |										   |   many of them operate on state data . 					  |								  |
-	must be able to access to same state  |										   |3) 	Only two backends actually perform operation : loccal and |													  |
-	data(shared state storage) .		  |										   |    remote 													  |
-										  |										   |4) The remote backend can perform API operations remotely ,   |
-										  |										   |	using Terraform cloud or Terraform Enterprise .			  |   
+--> Store state : 						  
+  1. Terraform uses persistent state data to keep track of the resources it manages .							   
+  2. Everyone working with a given collection of instructure resources must be able to access to same state data(shared state storage) .		  																							
 	
-	
+--> state Locking :
+		state Locking is to prevent conflicts and inconsistencies when the operations are being performed  .
+		
+--> Operations :
+
+1) "Operations" refers to performing APi requests against infrastructure servies in order to create , read , update, or destroy resources .	
+
+2) Not every terraform subcommand performs API operations many of them operate on state data . 	
+
+3) Only two backends actually perform operation : loccal and remote.
+
+4) The remote backend can perform API operations remotely , using Terraform cloud or Terraform Enterprise .
+
+----------------------------------------------------------------------------------------------------------------------
+
+Terraform Backends :
+
+Enhanced Backends - 
+1) Enhanced backends can both store state and perform operations . There are only two enhanced backends : local and remote .
+
+2) Example for remote backend performing operations : terraform cloud , Terraform enterprise .
+
+Standard backends :
+
+1)   Standard Backends only store state , and rely on the local backend for performing operations .
+
+Example : AWS S3 , Azure RM , Consul , etcd , gcs http and many more  . 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
 	
 	
 	

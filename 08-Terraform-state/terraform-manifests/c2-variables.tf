@@ -1,15 +1,13 @@
-#Input variable
+# Input Variables
+variable "aws_region" {
+  description = "Region in which AWS Resources to be created"
+  type = string
+  default = "us-east-1"
+}
 
-	variable "aws_region" {
-		description = " Region in which required AWS instanbce has been created"
-		type 		= string
-		default 	= "us-east-1"
-	}
-	
-	variable "ec2_instance_type" {
-		description = "EC2 Instance type"
-		type        = list(string)
-		default     = ["t3.micro" , "t3.small" , "t3.large"]
-	}
-	
-	
+variable "instance_type" {
+  description = "EC2 Instance Type - Instance Sizing"
+  type = string
+  #default = "t2.micro"
+  default = "t2.small"
+}
