@@ -16,3 +16,31 @@ terraform refresh
 # Review terraform state file
 1) terraform show
 2) Also verify S3 bucket, new version of terraform.tfstate file will be created
+
+------------------------------------------------------------------------------------------------------
+Why you need to the execution in this order (refresh, plan, make a decision, apply) ?
+
+--> There are changes happened in your infra manually and not via terraform.
+
+--> Now decision to be made if you want those changes or not.
+
+--> Choice-1: If you dont want those changes proceed with terraform apply so manual changes we have done on our cloud EC2 Instance 
+	will be removed.
+	
+--> Choice-2: If you want those changes, refer terraform.tfstate file about changes and embed them in your terraform manifests 
+	(example: c4-ec2-instance.tf) and proceed with flow (referesh, plan, review execution plan and apply)	
+	
+--------------------------------------------------------------------------------------------------------
+
+Execute the commands to make our manual change official in terraform manifests and tfstate files perspective
+
+# Terraform Refresh
+terraform refresh
+
+# Terraform Plan
+terraform plan
+
+# Terraform Apply
+terraform apply -auto-approve
+---------------------------------------------------------------------------------------------------------
+
