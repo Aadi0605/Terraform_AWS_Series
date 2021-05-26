@@ -1,0 +1,35 @@
+
+	**Terraform State Command**
+	
+--> These two commands comes under Terraform Inspecting State
+
+--> terraform state list: This command is used to list resources within a Terraform state.
+
+--> terraform state show: This command is used to show the attributes of a single resource in the Terraform state.
+
+--> # List Resources from Terraform State
+terraform state list
+
+# Show the attributes of a single resource from Terraform State
+terraform  state show data.aws_ami.amzlinux
+terraform  state show aws_instance.my-ec2-vm
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Terraform State mv command
+
+--> This commands comes under Terraform Moving Resources
+
+--> This command will move an item matched by the address given to the destination address.
+
+--> This command can also move to a destination address in a completely different state file
+
+-->	Very dangerous command
+
+--> Very advanced usage command
+
+--> Results will be unpredictable if concept is not clear about terraform state files mainly desired state and current state.
+
+--> Try this in production environments, only when everything worked well in lower environments.
+
+  	

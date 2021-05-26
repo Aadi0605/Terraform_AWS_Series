@@ -1,0 +1,9 @@
+ 
+ **Terraform State rm command**
+ 
+--> This commands comes under Terraform Moving Resources
+
+--> The terraform state rm command is used to remove items from the Terraform state.
+
+--> This command can remove single resources, single instances of a resource, entire modules, and more.
+ 
